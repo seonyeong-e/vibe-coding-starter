@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vibe Coding Starter",
-  description: "Next.js, Tailwind CSS, SQLite로 만드는 AI 코딩 실습 스타터",
+  title: "신선영 — 데이터 마케팅 프로필",
+  description: "데이터 마케팅 자기소개 페이지입니다.",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body className="bg-[#f5f2f0] text-[#111827] antialiased">{children}</body>
     </html>
   );
 }

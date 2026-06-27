@@ -1,4 +1,5 @@
 import Database from "better-sqlite3";
+import fs from "node:fs";
 import path from "node:path";
 
 export type Profile = {
@@ -58,6 +59,12 @@ function getDb() {
       label TEXT NOT NULL
     );
   `);
+
+  const initSqlPath = path.join(process.cwd(), "scripts", "init-db.sql");
+  if (fs.existsSync(initSqlPath)) {
+    const initSql = fs.readFileSync(initSqlPath, "utf-8");
+    db.exec(initSql);
+  }
 
   return db;
 }
